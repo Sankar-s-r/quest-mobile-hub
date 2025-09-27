@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Navigation } from "@/components/Navigation";
 import { supabase } from "@/integrations/supabase/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { 
   Flame, 
   Target, 
@@ -110,9 +110,11 @@ export default function Dashboard() {
                   <h3 className="font-semibold">Morning Flow - Beginner</h3>
                   <p className="text-sm text-muted-foreground">15 minutes • Sun Salutations & Gentle Stretches</p>
                 </div>
-                <Button size="sm">
-                  <Play className="h-4 w-4 mr-2" />
-                  Start
+                <Button size="sm" asChild>
+                  <Link to="/practice" className="flex items-center gap-2">
+                    <Play className="h-4 w-4" />
+                    Start
+                  </Link>
                 </Button>
               </div>
               <Progress value={0} className="h-2" />
